@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tasky-service
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+  type: LoadBalancer  # Change the type to LoadBalancer to create an external load balancer
+  selector:
+    app: pod-info
